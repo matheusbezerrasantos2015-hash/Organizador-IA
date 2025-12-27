@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organizador Pessoal IA</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Organizador Pessoal <span class="ai-badge">IA</span></h1>
+            <p>Foco, organização e produtividade.</p>
+        </header>
+
+        <main>
+            <!-- Criar tarefa -->
+            <form id="task-form" class="card task-form-extended">
+            
+                <div class="form-group full">
+                    <input type="text" id="task-input" placeholder="Digite uma nova tarefa..." required />
+                </div>
+            
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="priority">Prioridade</label>
+                        <select id="priority">
+                            <option value="low">🟢 Baixa</option>
+                            <option value="medium">🟡 Média</option>
+                            <option value="high">🔴 Alta</option>
+                        </select>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="start-date">Início</label>
+                        <input type="date" id="start-date" />
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="end-date">Final</label>
+                        <input type="date" id="end-date" />
+                    </div>
+                </div>
+            
+                <button type="submit" class="btn-primary">
+                    ➕ Adicionar tarefa
+                </button>
+            
+            </form>
+
+
+            <!-- Ações IA -->
+            <div class="card ai-card">
+                <button id="btn-generate-summary">
+                    🔮 Gerar resumo inteligente
+                </button>
+            
+                <div id="ai-summary-result" class="hidden">
+                    <h3>Assistente IA</h3>
+                    <div id="summary-content" class="ai-text"></div>
+                </div>
+            </div>
+
+
+            <!-- Lista -->
+            <section class="card">
+                <div class="list-header">
+                    <h2>Tarefas</h2>
+                    <div class="filters">
+                        <button class="filter-btn active" data-filter="all">Todas</button>
+                        <button class="filter-btn" data-filter="pending">Pendentes</button>
+                        <button class="filter-btn" data-filter="completed">Concluídas</button>
+                    </div>
+                </div>
+
+                <ul id="task-list"></ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

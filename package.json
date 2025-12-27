@@ -1,0 +1,21 @@
+{
+  "name": "organizador-ia",
+  "version": "1.0.0",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.19.2",
+    "groq-sdk": "^0.7.0",
+    "node-cron": "^4.2.1",
+    "sqlite3": "^5.1.7",
+    "twilio": "^5.11.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

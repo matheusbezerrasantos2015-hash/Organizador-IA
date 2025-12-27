@@ -1,0 +1,297 @@
+:root {
+    /* -------- COLORS -------- */
+    --bg: #020202;
+    --surface: #0a0a0a;
+    --card: #0f0f10;
+    --border: #1f1f23;
+
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --accent: #22d3ee;
+
+    --success: #22c55e;
+    --warning: #facc15;
+    --danger: #ef4444;
+
+    /* -------- UI -------- */
+    --radius: 14px;
+    --radius-sm: 10px;
+}
+
+/* -------- RESET -------- */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(circle at top, rgba(99, 102, 241, 0.08), transparent 45%),
+        var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* -------- LAYOUT -------- */
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    padding: 2.5rem 1.5rem 4rem;
+}
+
+header {
+    margin-bottom: 2.5rem;
+}
+
+header h1 {
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+header p {
+    color: var(--muted);
+    margin-top: 0.4rem;
+    max-width: 520px;
+}
+
+/* -------- AI BADGE -------- */
+
+.ai-badge {
+    font-size: 0.75rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* -------- CARDS -------- */
+
+.card {
+    background: linear-gradient(180deg, #0f0f10, #0b0b0c);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.6rem;
+    margin-bottom: 1.6rem;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+/* -------- FORM -------- */
+
+.task-form-extended {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+    display: block;
+}
+
+input,
+select {
+    width: 100%;
+    background: #0a0a0a;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 0.85rem;
+    color: var(--text);
+    outline: none;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input::placeholder {
+    color: #6b7280;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25);
+}
+
+/* -------- BUTTONS -------- */
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.4rem;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.25);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    align-self: flex-start;
+}
+
+/* -------- TASK LIST -------- */
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.filters {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    transition: 0.2s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary);
+    color: var(--text);
+}
+
+.filter-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.task-content h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.task-meta {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+}
+
+/* -------- PRIORITY -------- */
+
+.priority-high {
+    color: var(--danger);
+}
+
+.priority-medium {
+    color: var(--warning);
+}
+
+.priority-low {
+    color: var(--success);
+}
+
+.completed {
+    opacity: 0.4;
+    text-decoration: line-through;
+}
+
+/* -------- AI CARD -------- */
+
+.ai-card {
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    background:
+        radial-gradient(circle at top right, rgba(34, 211, 238, 0.15), transparent 40%),
+        var(--card);
+}
+
+.ai-card button {
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+.ai-card button:hover {
+    filter: brightness(1.05);
+}
+
+.ai-text {
+    margin-top: 1.2rem;
+    line-height: 1.75;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.ai-text strong {
+    color: var(--accent);
+}
+
+.ai-card h3 {
+    margin-top: 1.1rem;
+    font-size: 1.15rem;
+    color: var(--primary);
+}
+
+/* -------- UTIL -------- */
+
+.hidden {
+    display: none;
+}
+
+/* -------- RESPONSIVE -------- */
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        flex-wrap: wrap;
+    }
+
+    .list-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
